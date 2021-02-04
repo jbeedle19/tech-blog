@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
             // Include Comment model here
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -39,7 +38,6 @@ router.get('/:id', (req, res) => {
             // Include Comment model here
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
