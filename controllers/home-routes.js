@@ -33,6 +33,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// Render the login page unless they are loggedin already, redirect to homepage
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -42,6 +43,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// Show a single post page
 router.get('/post/:id', (req, res) => {
     Post.findOne({
         where: {
