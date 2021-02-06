@@ -9,3 +9,4 @@ An online forum for users to publish articles, blog posts, and their thoughts an
 * bcrypt 
 * jest
 * Handlebars.js
+* Bootstrap
