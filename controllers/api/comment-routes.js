@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 });
 
 // Create a new comment
-router.post('/', /* withAuth, */ (req, res) => {
+router.post('/', withAuth, (req, res) => {
     // Expects: {comment_text: 'This is the comment', user_id: 1, post_id: 1}
     Comment.create({
         comment_text: req.body.comment_text,
@@ -29,7 +29,7 @@ router.post('/', /* withAuth, */ (req, res) => {
 });
 
 // Delete a comment
-router.delete('/:id', /* withAuth, */ (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Comment.destroy({
         where: {
             id: req.params.id

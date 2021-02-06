@@ -63,13 +63,12 @@ router.get('/:id', (req, res) => {
 });
 
 // Create a new post with POST
-router.post('/', /* withAuth, */ (req, res) => {
+router.post('/', withAuth, (req, res) => {
     // expects {title: 'Post title here', post_content: 'Content of post here', user_id: 1}
     Post.create({
         title: req.body.title,
         post_content: req.body.post_content,
-        // Change to req.session once login finished
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -79,7 +78,7 @@ router.post('/', /* withAuth, */ (req, res) => {
 });
 
 // Update a post's title and content with PUT
-router.put('/:id', /* withAuth, */ (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Post.update(
         {
             title: req.body.title,
@@ -105,7 +104,7 @@ router.put('/:id', /* withAuth, */ (req, res) => {
 });
 
 // DELETE a post
-router.delete('/:id', /* withAuth, */ (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id
