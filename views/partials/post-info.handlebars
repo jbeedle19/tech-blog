@@ -1,9 +1,14 @@
-<article class="post">
-    <div class="title">
-        <a href="/post/{{id}}">{{title}}</a>
+<div class="col-11 col-sm-10 col-md-9 col-lg-8">
+    <div class="card text-center border-dark mb-3">
+        <div class="card-header text-white bg-dark">
+            <p class="card-title">{{title}}</p>
+        </div>
+        <div class="card-body bg-light">
+            <p class="card-text">{{post_content}}</p>
+            <a href="/post/{{id}}" class="btn btn-primary">View Post</a>
+        </div>
+        <div class="card-footer text-white bg-secondary">
+            by {{user.username}} on {{format_date createdAt}}
+        </div>
     </div>
-        <p>{{post_content}}</p>
-    <div class="meta">
-        by {{user.username}} on {{format_date createdAt}}
-    </div>
-</article>
+</div>
