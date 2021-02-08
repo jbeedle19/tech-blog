@@ -1,29 +1,31 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">The Tech Blog</h1>
-        <p>Signup</p>
+        <p>Sign Up</p>
     </div>
 </div>
 {{!-- Signup Form --}}
-<form class="signup-form">
-    <div>
-        <label for="username-signup">username:</label>
-        <input type="text" id="username-signup" />
-    </div>
-    <div>
-        <label for="email-signup">email:</label>
-        <input type="text" id="email-signup" />
-    </div>
-    <div>
-        <label for="password-signup">password:</label>
-        <input type="password" id="password-signup" />
-    </div>
-    <div>
-        <button type="submit">Sign Up!</button>
-    </div>
-    <div>
-        <p>Already a User? <a href="/login">Login!</a></p>
-    </div>
-</form>
+<div class="row justify-content-center">
+    <form class="signup-form mb-5 col-11 col-sm-10 col-md-9 col-lg-8">
+        <div class="form-group">
+            <label for="username-signup">username:</label>
+            <input class="form-control" type="text" id="username-signup" />
+        </div>
+        <div class="form-group">
+            <label for="email-signup">email:</label>
+            <input class="form-control" type="text" id="email-signup" />
+        </div>
+        <div class="form-group">
+            <label for="password-signup">password:</label>
+            <input class="form-control" type="password" id="password-signup" />
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-success">Sign Up!</button>
+        </div>
+        <div class="text-center">
+            <p>Already a User? <a href="/login">Login!</a></p>
+        </div>
+    </form>
+</div>
 
 <script src="/javascript/signup.js"></script>
