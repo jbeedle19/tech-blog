@@ -4,24 +4,33 @@
     </div>
 </div>
 {{!-- Post Info --}}
-{{> post-info post }}
-
-{{!-- Post Comment/Upvote --}}
+<div class="row justify-content-center mb-5">
+    {{> post-info post }}
+</div>
+{{!-- Post Comment --}}
 {{#if loggedIn}}
-<form class="comment-form">
-    <div>
-        <textarea name="comment-body"></textarea>
-    </div>
-
-    <div>
-        <button type="submit">add comment</button>
-    </div>
-</form>
+<div class="row justify-content-center">
+    <form class="comment-form mb-5 col-11 col-sm-10 col-md-9 col-lg-8">
+        <div class="form-group text-center">
+            <h2>Leave a Comment</h2>  
+        </div>
+        <div class="form-group">
+            <label for="post-content">Comment:</label>
+            <textarea class="form-control" id="post-content" name="comment-body" rows="3"></textarea>
+        </div>
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-success">Add Comment</button>
+        </div>
+    </form>
+</div>
 {{/if}}
-
 {{!-- Display Comments --}}
-{{> comments post.comments}}
-
+<div class="row justify-content-center">
+    <div class="col-11 col-sm-10 col-md-9 col-lg-8">
+        <h2>Comments:</h2>
+    </div>
+    {{> comments post.comments}}
+</div>
 {{!-- Link javascript code to enable page functions --}}
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
