@@ -1,24 +1,30 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h1 class="display-4">Dashboard</h1>
-        <p>Edit Your Post</p>
+        <h1 class="display-4">Edit &#38; Delete</h1>
+        <a href="/dashboard"> &larr; Return to Dashboard</a>
     </div>
 </div>
 {{!-- Displays edit post area --}}
-<article>
-    <a href="/dashboard"> &larr; Return to Dashboard</a>
-    <h2>
-        Edit Post
-    </h2>
-    <form class="edit-post-form">
-        <div>
-            <input name="post-title" type="text" value="{{post.title}}" />
-            <input name="post-content" type="text" value="{{post.post_content}}" />
+<div class="row justify-content-center">
+    <form class="edit-post-form mb-5 col-11 col-sm-10 col-md-9 col-lg-8">
+        <div class="form-group text-center">
+            <a href="/dashboard"> &larr; Return to Dashboard</a>
+            <h2>Edit Your Post!</h2>  
         </div>
-        <button type="submit">Update Post</button>
-        <button type="button" class="delete-post-btn">Delete Post</button>
+        <div class="form-group">
+            <label for="post-title">Title:</label>
+            <input type="text" class="form-control" id="post-title" name="post-title" value="{{post.title}}" />
+        </div>
+        <div class="form-group">
+            <label for="post-content">Content:</label>
+            <textarea class="form-control" id="post-content" name="post-content" rows="5" placeholder="{{post.post_content}}"></textarea>
+        </div>
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-success">Update</button>
+            <button type="button" class="btn btn-danger delete-post-btn">Delete</button>
+        </div>
     </form>
-</article>
+</div>
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
